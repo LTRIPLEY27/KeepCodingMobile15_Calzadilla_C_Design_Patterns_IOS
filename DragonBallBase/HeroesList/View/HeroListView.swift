@@ -33,6 +33,12 @@ class HeroeListView : UIView {
         tableView.backgroundColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
+        // registro de la tabla con el datasource
+        //tableView.register(nil, forCellReuseIdentifier: "HeroeListCell")
+        
+        // REGISTRO DE LA CELDA A PRINTAR, CON EL IDENTIFICADOR DEL DATASOURCE
+        tableView.register(HeroCustomCell.self, forCellReuseIdentifier: "HeroeListCell")
+        
         return tableView
     }()
     
