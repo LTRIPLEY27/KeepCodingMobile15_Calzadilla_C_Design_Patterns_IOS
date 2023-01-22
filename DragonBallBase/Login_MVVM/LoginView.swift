@@ -52,7 +52,8 @@ class LoginView : UIView {
         
         label.text = ""
         label.textColor = .red
-        label.font = UIFont.systemFont(ofSize: 24, weight: .heavy)
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         label.textAlignment = .center
 
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -100,7 +101,7 @@ class LoginView : UIView {
             label.topAnchor.constraint(equalTo:  botton.bottomAnchor, constant: 40),
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            label.heightAnchor.constraint(equalToConstant: 40),
+            label.heightAnchor.constraint(equalToConstant: 200),
             label.widthAnchor.constraint(equalToConstant: 80),
         ])
     }
@@ -116,5 +117,9 @@ class LoginView : UIView {
     
     func checkButton() -> UIButton {
         return botton
+    }
+    
+    func getLabel() -> UILabel {
+        return label
     }
 }

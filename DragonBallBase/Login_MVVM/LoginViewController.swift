@@ -11,11 +11,7 @@ import UIKit
 class LoginViewController : UIViewController {
     
     
-    var viewModel : LoginViewModel?
-   /* var email : UITextField?
-    var pass : UITextField?
-    var button : UIButton?
-    var response : UILabel?*/
+     var viewModel : LoginViewModel?
      var email : String?
      var pass : String?
      var button : UIButton?
@@ -27,11 +23,10 @@ class LoginViewController : UIViewController {
     
     // EN EL LOADVIEW ES DONDE EJECUTAMOS LAS VISTAS
     override func loadView() {
-        //view = LoginView()
         let vie = LoginView()
 
         button = vie.checkButton()
-        
+        response = vie.getLabel()
         view = vie
     }
     
@@ -57,11 +52,31 @@ class LoginViewController : UIViewController {
             return
         }
         
-        print(email, password)
-        getData(email: email, password: password)
+        getData(email: email.lowercased(), password: password.lowercased())
+        update()
     }
     
     func getData(email: String, password: String){
-        viewModel?.loginCheck(login: email, password: password)
+        
+        viewModel?.logincheck(email: email, password: password)
+
+        
+        print(email,password)
+    
+        
+    }
+    
+    func update() {
+        viewModel = LoginViewModel()
+        
+        response?.text = HeroListViewModel.myToken
+        
+        viewModel?.updateLogin = { [weak self] token in
+            
+            DispatchQueue.main.async {
+                self?.response?.text = token
+            }
+            
+        }
     }
 }
