@@ -18,6 +18,9 @@ class HeroListController: UIViewController {
     // DEFINICIÓN DEL DATASOURCE PARA ENLAZAR
     var tableDataSource : HeroeListDataSource?
     
+    //
+    var tableDelegate : HeroListDelegate?
+    
     //******    REFACTOR  MVVM  --> 'HeroListModel'
     var viewModel : HeroListViewModel?
     
@@ -32,6 +35,10 @@ class HeroListController: UIViewController {
         
         // ASOCIACIÓN DEL TABLEVIEW CON LA DATASOURCE
         mainView.heroesTableView.dataSource = tableDataSource
+        
+        // INSTANCIACIÓN Y ENLAZAMIENTO DEL DELEGADO
+        tableDelegate = HeroListDelegate()
+        mainView.heroesTableView.delegate = tableDelegate
     }
     
     override func viewDidLoad() {
@@ -41,21 +48,49 @@ class HeroListController: UIViewController {
         // INSTANCIACIÓN DEL VIEW MODEL
         viewModel = HeroListViewModel()
         
+        setUpUpdateUI()
+
+        setUpTabelDelegate()
+        
+        getData()
+        //******************** old
+        
+        // definicion de los managers
+        //fetchData()
+        
+     
+    }
+    
+    func setUpUpdateUI() {
         // llamado actualizar la interfaz
         viewModel?.updateUI = { [weak self] heroes in
             self?.heroes = heroes
             self?.tableDataSource?.heroes = heroes
         }
-
+    }
+    
+    func getData(){
         // REQUEST A LA API
         viewModel?.fetchData()
         
-        //******************** old
-        
-        // definicion de los managers
-        //fetchData()
     }
     
+    func setUpTabelDelegate(){
+        // IMPLEMENTACIÓN DEL DETAILVIEW
+        tableDelegate?.didTapOnCell = { [weak self] index in
+            
+            guard let datasource = self?.tableDataSource else {
+                return
+            }
+            
+            // ALMACENAJE DEL ÍNDICE PULSADO∫
+            let hero = datasource.heroes[index]
+            
+            let heroDetailController = HeroDetailController(heroDetailModel: hero)
+            
+            self?.present(heroDetailController, animated: true)
+        }
+    }
     /*      ***  REFACTOR 'MVVM' --> 'HEROLISTVIEWMODEL, DELEGA EL MÉTODO PARA CREAR MÁS DINAMISMO Y PROPICIAR LA POTENCIALIDAD, ELIMINANDO DEPENDENCIAS Y EL ACOPLAMIENTO
     func fetchData(){
         

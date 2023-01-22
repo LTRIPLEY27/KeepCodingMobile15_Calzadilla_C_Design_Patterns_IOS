@@ -1,15 +1,14 @@
 //
-//  HeroCustomCell.swift
+//  HeroDetailView.swift
 //  DragonBallBase
 //
-//  Created by IsaDevs on 21/1/23.
+//  Created by IsaDevs on 22/1/23.
 //
 
 import Foundation
 import UIKit
-import Kingfisher // IMPORTACIÓN DEL KINGFISHER PARA LA IMAGEN
 
-class HeroCustomCell : UITableViewCell {
+class HeroDetailView : UIView {
     
     let image = {
         let image = UIImageView()
@@ -41,21 +40,23 @@ class HeroCustomCell : UITableViewCell {
         return description
     }()
     
-    // CONSTRUCTOR DE LA CELDA
-    override init(style : UITableViewCell.CellStyle, reuseIdentifier : String?){
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setUpViews()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // DEFINICIÓN DE LAS SUBVISTAS Y CONSTRAINS
     func setUpViews(){
+        backgroundColor = .darkGray
         addSubview(image)
-        addSubview(cellLabel)
-        addSubview(descriptionLabel)
+//        addSubview(cellLabel)
+//        addSubview(descriptionLabel)
         
         NSLayoutConstraint.activate([
             
@@ -64,7 +65,7 @@ class HeroCustomCell : UITableViewCell {
             image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             image.heightAnchor.constraint(equalToConstant: 120),
             image.widthAnchor.constraint(equalToConstant: 120),
-            // CONSTRAINS LABEL TITLE
+            /*// CONSTRAINS LABEL TITLE
             cellLabel.topAnchor.constraint(equalTo: image.topAnchor),
             cellLabel.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant : 20), // LEFT
             cellLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
@@ -73,10 +74,10 @@ class HeroCustomCell : UITableViewCell {
             descriptionLabel.topAnchor.constraint(equalTo: cellLabel.bottomAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: cellLabel.trailingAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: cellLabel.leadingAnchor),
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 100),*/
         ])
     }
-    
+
     // RESPONDE A LAS SUBVISTAS EN EL 'setUpViews()' CON LA DATA A IMPRIMIR DEL MODELO
     func configure(_ model : HeroModel){
         self.cellLabel.text = model.name
