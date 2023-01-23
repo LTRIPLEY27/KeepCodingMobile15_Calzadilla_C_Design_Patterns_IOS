@@ -10,12 +10,12 @@
 		25B10C53297D531600E9CB61 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B10C52297D531600E9CB61 /* LoginViewModel.swift */; };
 		25B10C55297D532B00E9CB61 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B10C54297D532B00E9CB61 /* LoginView.swift */; };
 		25B10C57297D534000E9CB61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B10C56297D534000E9CB61 /* LoginViewController.swift */; };
-		25B10C5E297D77FE00E9CB61 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25B10C5D297D77FE00E9CB61 /* Media.xcassets */; };
 		25B10C60297DA68700E9CB61 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B10C5F297DA68700E9CB61 /* LoginModel.swift */; };
 		25B6C2292979AA790098C6D9 /* HeroListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6C2282979AA790098C6D9 /* HeroListView.swift */; };
 		25B6C22B2979B5A70098C6D9 /* HeroListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6C22A2979B5A70098C6D9 /* HeroListController.swift */; };
 		25BCC9D9297CAC0C00F20952 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BCC9D8297CAC0C00F20952 /* HeroDetailView.swift */; };
 		25BCC9DB297CAC5F00F20952 /* HeroDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BCC9DA297CAC5F00F20952 /* HeroDetailController.swift */; };
+		25C1E349297E72A200EBEAC6 /* Assetts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25C1E348297E72A200EBEAC6 /* Assetts.xcassets */; };
 		25C5BED3297B06A10076856C /* HeroeListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C5BED2297B06A10076856C /* HeroeListDataSource.swift */; };
 		25D989F1297C1002001308CA /* HeroCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D989F0297C1002001308CA /* HeroCustomCell.swift */; };
 		25D989F4297C1EA4001308CA /* HeroListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D989F3297C1EA4001308CA /* HeroListViewModel.swift */; };
@@ -35,12 +35,12 @@
 		25B10C52297D531600E9CB61 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		25B10C54297D532B00E9CB61 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		25B10C56297D534000E9CB61 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		25B10C5D297D77FE00E9CB61 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		25B10C5F297DA68700E9CB61 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		25B6C2282979AA790098C6D9 /* HeroListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListView.swift; sourceTree = "<group>"; };
 		25B6C22A2979B5A70098C6D9 /* HeroListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListController.swift; sourceTree = "<group>"; };
 		25BCC9D8297CAC0C00F20952 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		25BCC9DA297CAC5F00F20952 /* HeroDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailController.swift; sourceTree = "<group>"; };
+		25C1E348297E72A200EBEAC6 /* Assetts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assetts.xcassets; sourceTree = "<group>"; };
 		25C5BED2297B06A10076856C /* HeroeListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeListDataSource.swift; sourceTree = "<group>"; };
 		25D989F0297C1002001308CA /* HeroCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCustomCell.swift; sourceTree = "<group>"; };
 		25D989F3297C1EA4001308CA /* HeroListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewModel.swift; sourceTree = "<group>"; };
@@ -80,14 +80,6 @@
 			path = Login_MVVM;
 			sourceTree = "<group>";
 		};
-		25B10C5C297D77DD00E9CB61 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-				25B10C5D297D77FE00E9CB61 /* Media.xcassets */,
-			);
-			path = assets;
-			sourceTree = "<group>";
-		};
 		25BCC9D6297CABBB00F20952 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +107,7 @@
 		5D78B9842970857B00274846 = {
 			isa = PBXGroup;
 			children = (
-				25B10C5C297D77DD00E9CB61 /* assets */,
+				25C1E348297E72A200EBEAC6 /* Assetts.xcassets */,
 				5D78B98F2970857C00274846 /* DragonBallBase */,
 				5D78B98E2970857C00274846 /* Products */,
 			);
@@ -267,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D78B99D2970857E00274846 /* LaunchScreen.storyboard in Resources */,
-				25B10C5E297D77FE00E9CB61 /* Media.xcassets in Resources */,
+				25C1E349297E72A200EBEAC6 /* Assetts.xcassets in Resources */,
 				5D78B9982970857C00274846 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -51,7 +51,7 @@ class LoginView : UIView {
         let label = UILabel()
         
         label.text = ""
-        label.textColor = .red
+        label.textColor = .cyan
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         label.textAlignment = .center
@@ -71,8 +71,7 @@ class LoginView : UIView {
     }
     
     func setUpViews(){
-        //backgroundColor = UIColor(patternImage: UIImage(named: "dragonBall.jpg")!)
-        backgroundColor = .darkGray
+        backgroundColor = UIColor(patternImage: UIImage(named: "dragonBall.jpg")!)
 
         addSubview(loginBox)
         addSubview(password)
@@ -115,10 +114,12 @@ class LoginView : UIView {
         return user
     }
     
+    // RECOGE EL EVENTO DEL BUTTON
     func checkButton() -> UIButton {
         return botton
     }
     
+    // RECOGE LA LABEL PARA PRINTAR EL VALOR
     func getLabel() -> UILabel {
         return label
     }

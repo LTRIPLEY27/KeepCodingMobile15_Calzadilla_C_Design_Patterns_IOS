@@ -19,34 +19,18 @@ class LoginViewModel : NSObject {
     }
     
     // REFACTOR 'MVVM' DE LA CLASE 'CONTROLLER'
-    /*func loginCheck(login : String, password : String ){
-        let email: String? = login
+    func loginCheck(email: String, password: String ){
+        let email: String? = email
         let password: String? = password
         
         let apiConnect = ApiClient(token: HeroListViewModel.myToken)
         
         apiConnect.login(user: email!, password: password!) { token, error in
-            self.updateLogin?(login ?? "Not data found")
+            self.updateLogin?(token ?? "Not data found")
             
             print(token ?? error)
         }
 
-    }*/
-    
-    func logincheck(email : String, password : String) {
-        
-        let email: String? = email
-        let password: String? = password
-        
-        let token : String = ""
-        
-        let apiConnect = ApiClient(token: HeroListViewModel.myToken)
-        
-        apiConnect.login(user: email!, password: password!) {token, error in
-        
-            self.updateLogin?(token ?? "not data")
-            
-            print(token)
-        }
     }
+    
 }

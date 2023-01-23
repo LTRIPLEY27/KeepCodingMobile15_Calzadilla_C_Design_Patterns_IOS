@@ -10,18 +10,20 @@ import UIKit
 
 class LoginViewController : UIViewController {
     
-    
+    // enlace con los elementos d ela vista para capturar los valores
      var viewModel : LoginViewModel?
      var email : String?
      var pass : String?
      var button : UIButton?
      var response : UILabel?
     
+    // casting de la view a loginview
     var mainView : LoginView {self.view as!
         LoginView
     }
     
     // EN EL LOADVIEW ES DONDE EJECUTAMOS LAS VISTAS
+    // INICIALIZACIÓN DE LOS COMPONENTES
     override func loadView() {
         let vie = LoginView()
 
@@ -33,7 +35,7 @@ class LoginViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = LoginViewModel()
-        
+        //LLAMADO DE LA FUNCIÓN DEL BUTTON
         button?.addTarget(self, action: #selector(buttonPress), for: .touchUpInside)
 
     }
@@ -53,22 +55,23 @@ class LoginViewController : UIViewController {
         }
         
         getData(email: email.lowercased(), password: password.lowercased())
-        update()
+        //update()
     }
     
+    // FUNCIÓN DATA, DIAPARADA POR EL EVENTO ON CLICK, LLAMA AL LOGINCHECK PARA CAPTURAR EL TOKEN
     func getData(email: String, password: String){
         
-        viewModel?.logincheck(email: email, password: password)
+        viewModel?.loginCheck(email: email, password: password)
 
-        
+        response?.text = HeroListViewModel.myToken
         print(email,password)
     
-        
     }
     
-    func update() {
-        viewModel = LoginViewModel()
-        
+    // FUNCIÓN PARA PRINTAR EL TOKEN EN LA VISTA
+    // RETORNA NIL, PERO EN TEORÍA IBA AL HILO PRINCIPAL PARA PRINTAR LA RESPUESTA
+    /*func update() {
+
         response?.text = HeroListViewModel.myToken
         
         viewModel?.updateLogin = { [weak self] token in
@@ -78,5 +81,5 @@ class LoginViewController : UIViewController {
             }
             
         }
-    }
+    }*/
 }
